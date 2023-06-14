@@ -1,6 +1,7 @@
 const express = require('express');
 const articles = require('./data/articles.json');
 const router = require('./router');
+const notFound = require('./middlewares/notFound');
 
 const app = express();
 const port = 5050;
@@ -14,6 +15,8 @@ app.use(express.static('static'));
 app.locals.myArticles = articles;
 
 app.use(router);
+
+app.use(notFound);
 
 app.listen(port, () => {
 	console.log(`Listening on http://localhost:${port}`);

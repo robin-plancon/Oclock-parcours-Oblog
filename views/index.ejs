@@ -18,7 +18,17 @@
 					<a href="<%= article.category %>"><%= article.category %></a>
 				</div>
 			</header>
-			<p><%= article.text %></p>
+			<p>
+        <% let splitArticle = article.text.split(' ');
+          if (splitArticle.length > 30) {
+            splitArticle = splitArticle.slice(0, 29);
+            splitArticle.push('...');
+          }
+          const articleResume = splitArticle.join(' ');
+        %>
+        <%= articleResume %>
+      
+      </p>
 			<a class="card-action pure-button" href="/article/<%= article.id %>">Lire l'article</a>
 		</article>
 		<% }); %>

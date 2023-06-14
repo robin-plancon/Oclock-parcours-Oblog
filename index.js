@@ -17,6 +17,15 @@ app.get('/', (req, res) => {
 	res.render('index');
 });
 
+app.get('/article/:id', (req, res, next) => {
+	const { id } = req.params;
+	const foundedArticle = articles.find((article) => article.id === parseInt(id, 10));
+	if (!foundedArticle) {
+		return next();
+	}
+	return res.render('article', { article: foundedArticle });
+});
+
 app.listen(port, () => {
 	console.log(`Listening on http://localhost:${port}`);
 });

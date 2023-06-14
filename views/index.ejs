@@ -9,7 +9,7 @@
 			<header>
 				<img
 					class="card-img pure-img"
-					src="images/<%= article.img %>"
+					src="/images/<%= article.img %>"
 					alt="<%= article.img_alt %>"
 				/>
 				<h2><%= article.title %></h2>
@@ -20,7 +20,7 @@
 			<p>
 				<%= article.text %>
 			</p>
-			<a class="card-action pure-button" href="article.html">Lire l'article</a>
+			<a class="card-action pure-button" href="/article/<%= article.id %>">Lire l'article</a>
 		</article>
 		<% }); %>
 	</div>

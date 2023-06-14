@@ -14,12 +14,11 @@
 				/>
 				<h2><%= article.title %></h2>
 				<div class="card-meta">
-					Par <a href="#"><%= article.author %></a> dans la catégorie <a href="#"><%= article.category %></a>
+					Par <a href="#"><%= article.author %></a> dans la catégorie
+					<a href="<%= article.category %>"><%= article.category %></a>
 				</div>
 			</header>
-			<p>
-				<%= article.text %>
-			</p>
+			<p><%= article.text %></p>
 			<a class="card-action pure-button" href="/article/<%= article.id %>">Lire l'article</a>
 		</article>
 		<% }); %>
